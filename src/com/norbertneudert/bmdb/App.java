@@ -10,9 +10,12 @@ public class App {
     //private IO io; TODO: ask what is this
     private List<Media> medias;
     private Media selectedMedia;
+    private Service service;
+    private View view;
 
     public App (Service service, View view) {
-        this.medias = service.findAllMedia();
+        this.service = service;
+        this.view = view;
     }
 
     public void play() {

@@ -1,8 +1,8 @@
-package com.norbertneudert.bmdb.app;
+package com.norbertneudert.bmdb;
 
 public class App {
 
     public static void main(String[] args) {
-        
+
     }
 }

@@ -1,4 +1,4 @@
-package com.norbertneudert;
+package com.norbertneudert.bmdb.domain;
 
 import java.util.HashMap;
 import java.util.Map;

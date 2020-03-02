@@ -1,4 +1,4 @@
-package com.norbertneudert;
+package com.norbertneudert.bmdb.domain;
 
 public class Review {
     private String text;

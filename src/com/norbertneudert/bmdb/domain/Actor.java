@@ -1,4 +1,4 @@
-package com.norbertneudert;
+package com.norbertneudert.bmdb.domain;
 
 import java.time.LocalDate;
 import java.util.List;

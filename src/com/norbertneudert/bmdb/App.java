@@ -1,25 +1,43 @@
 package com.norbertneudert.bmdb;
 
-import com.norbertneudert.bmdb.domain.Media;
-import com.norbertneudert.bmdb.domain.Review;
+import com.norbertneudert.bmdb.builders.ActorBuilder;
+import com.norbertneudert.bmdb.builders.MediaBuilder;
+import com.norbertneudert.bmdb.builders.UserBuilder;
+import com.norbertneudert.bmdb.domain.*;
 
+import java.io.IOException;
+import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class App {
     private Review review;
-    //private IO io; TODO: ask what is this
+    //private IO io;
     private List<Media> medias;
     private Media selectedMedia;
     private Service service;
     private View view;
 
     public App (Service service, View view) {
+        this.medias = Collections.emptyList();
+        this.createTestData();
         this.service = service;
         this.view = view;
     }
 
-    public void play() {
-        // TODO: implement function
+    public void play() throws IOException {
+        User user = this.view.readUserData();
+        this.service.saveUser(user);
+        this.view.printWelcomeMessage(user);
+        this.medias = this.service.findAllMedia();
+        String wantToReview = "yes";
+        do {
+            this.view.printMedias();
+            this.doReview();
+            wantToReview = this.view.askReview();
+        } while ( wantToReview.equals("yes"));
     }
 
     private void createUser() {

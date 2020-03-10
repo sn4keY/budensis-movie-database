@@ -22,7 +22,7 @@ public class View {
     }
 
     public void printWelcomeMessage(User user) {
-        // TODO: write function body that prints out a welcome message based on the user.
+        System.out.println("Welcome " + user.getName());
     }
 
     public void printMedias() {

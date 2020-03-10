@@ -25,11 +25,9 @@ public class App {
         this.view = view;
     }
 
-    public void play() throws IOException {
+    public void play() {
         User user = this.view.readUserData();
-        //this.service.saveUser(user);
         this.view.printWelcomeMessage(user);
-        //this.medias = this.service.findAllMedia();
         String wantToReview = "yes";
         do {
             this.view.printMedias(this.medias);
@@ -42,7 +40,7 @@ public class App {
         // TODO: implement function
     }
 
-    private void doReview(User user) throws IOException {
+    private void doReview(User user) {
         BigDecimal id = this.view.askId();
         String text = this.view.askText();
         Rating rating = this.view.askRating();

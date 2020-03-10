@@ -52,10 +52,16 @@ public class View {
         System.out.println("Media not found with the id: " + id);
     }
 
-    public BigDecimal askId() throws IOException {
+    public BigDecimal askId() {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Choose an id");
-        return new BigDecimal(bufferedReader.readLine());
+        BigDecimal id = null;
+        try {
+            id = new BigDecimal(bufferedReader.readLine());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return id;
     }
 
     public String askText() {
@@ -88,9 +94,15 @@ public class View {
         return Rating.AVERAGE;
     }
 
-    public String askReview() throws IOException {
+    public String askReview() {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Do you want to write another review? (yes/no)");
-        return bufferedReader.readLine();
+        String choice = "";
+        try {
+            choice = bufferedReader.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return choice;
     }
 }

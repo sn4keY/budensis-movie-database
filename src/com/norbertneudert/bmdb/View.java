@@ -69,6 +69,25 @@ public class View {
         }
         return text;
     }
+
+    public Rating askRating() {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("Choose a rating: BAD, AVERAGE, GOOD");
+        String rating = null;
+        try {
+            rating = bufferedReader.readLine();
+            switch (rating.toLowerCase()) {
+                case "bad":
+                    return Rating.BAD;
+                case "good":
+                    return Rating.GOOD;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return Rating.AVERAGE;
+    }
+
     public String askReview() throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Do you want to write another review? (yes/no)");

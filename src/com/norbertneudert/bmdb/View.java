@@ -8,7 +8,17 @@ import java.io.InputStreamReader;
 
 public class View {
     public User readUserData() {
-        return new User(); // TODO: write function body that identifies the user.
+        System.out.println("What is your name?");
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        String userName = null;
+        try {
+            userName = bufferedReader.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        User user = new User();
+        user.setName(userName);
+        return user;
     }
 
     public void printWelcomeMessage(User user) {

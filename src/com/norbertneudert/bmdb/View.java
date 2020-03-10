@@ -8,6 +8,7 @@ import com.norbertneudert.bmdb.domain.User;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.math.BigDecimal;
 import java.util.List;
 
 public class View {
@@ -49,6 +50,12 @@ public class View {
 
     public void printMediaNotFound(BigDecimal id) {
         System.out.println("Media not found with the id: " + id);
+    }
+
+    public BigDecimal askId() throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("Choose an id");
+        return new BigDecimal(bufferedReader.readLine());
     }
     public String askReview() throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));

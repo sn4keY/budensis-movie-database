@@ -55,4 +55,10 @@ public class Actor {
     public void setFilmography(List<Media> filmography) {
         this.filmography = filmography;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        return stringBuilder.append("name=").append(getName()).append(", ").append("born=").append(getBorn()).append("\n").toString();
+    }
 }

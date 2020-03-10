@@ -57,6 +57,18 @@ public class View {
         System.out.println("Choose an id");
         return new BigDecimal(bufferedReader.readLine());
     }
+
+    public String askText() {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("Write a review");
+        String text = null;
+        try {
+            text = bufferedReader.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return text;
+    }
     public String askReview() throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Do you want to write another review? (yes/no)");

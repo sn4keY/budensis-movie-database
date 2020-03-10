@@ -68,7 +68,7 @@ public class App {
     }
 
     private void printReviewAverage() {
-        // TODO: implement function
+        this.view.printReviewAverage(this.selectedMedia.getReviews());
     }
 
     private void createTestData() {

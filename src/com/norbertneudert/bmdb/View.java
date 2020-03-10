@@ -1,6 +1,8 @@
 package com.norbertneudert.bmdb;
 
 import com.norbertneudert.bmdb.domain.Media;
+import com.norbertneudert.bmdb.domain.Rating;
+import com.norbertneudert.bmdb.domain.Review;
 import com.norbertneudert.bmdb.domain.User;
 
 import java.io.BufferedReader;
@@ -35,6 +37,15 @@ public class View {
         // TODO: write function body that prints out the current user's reviews.
     }
 
+    public void printReviewAverage(List<Review> reviews) {
+        double average = 0.0;
+        int count = 0;
+        for (Review r : reviews) {
+            average += r.getRating().rate;
+            count++;
+        }
+        System.out.println("Average of reviews: " + average/count);
+    }
     public String askReview() throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Do you want to write another review? (yes/no)");

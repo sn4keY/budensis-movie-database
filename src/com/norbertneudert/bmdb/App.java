@@ -29,13 +29,13 @@ public class App {
 
     public void play() throws IOException {
         User user = this.view.readUserData();
-        this.service.saveUser(user);
+        //this.service.saveUser(user);
         this.view.printWelcomeMessage(user);
-        this.medias = this.service.findAllMedia();
+        //this.medias = this.service.findAllMedia();
         String wantToReview = "yes";
         do {
-            this.view.printMedias();
-            this.doReview();
+            this.view.printMedias(this.medias);
+            this.doReview(user);
             wantToReview = this.view.askReview();
         } while ( wantToReview.equals("yes"));
     }

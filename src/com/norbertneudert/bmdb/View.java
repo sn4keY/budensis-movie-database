@@ -1,10 +1,12 @@
 package com.norbertneudert.bmdb;
 
+import com.norbertneudert.bmdb.domain.Media;
 import com.norbertneudert.bmdb.domain.User;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.List;
 
 public class View {
     public User readUserData() {
@@ -25,8 +27,8 @@ public class View {
         System.out.println("Welcome " + user.getName());
     }
 
-    public void printMedias() {
-        // TODO: write function body that prints out all the medias.
+    public void printMedias(List<Media> medias) {
+        medias.forEach(media -> System.out.println(media.toString()));
     }
 
     public void printReviews(User user) {

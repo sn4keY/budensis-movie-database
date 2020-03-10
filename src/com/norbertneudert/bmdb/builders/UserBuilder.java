@@ -15,11 +15,11 @@ public class UserBuilder {
     }
 
     public UserBuilder setEmail(String email) {
-        this.user.setName(email);
+        this.user.setEmail(email);
         return this;
     }
     public UserBuilder setPassword(String password) {
-        this.user.setName(password);
+        this.user.setPassWord(password);
         return this;
     }
 

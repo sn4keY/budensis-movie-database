@@ -102,7 +102,7 @@ public class App {
                 .setTitle("Inception")
                 .setDescription("A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.")
                 .setPremier(LocalDate.of(2010, 7, 22))
-                .addReview("Overrated", Rating.AVERAGE, users.get(3))
+                .addReview("Overrated", Rating.AVERAGE, users.get(2))
                 .addActor(actors.get(4))
                 .addActor(actors.get(5))
                 .build();
@@ -125,7 +125,7 @@ public class App {
                 .setDescription("A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.")
                 .setPremier(LocalDate.of(1999, 8, 5))
                 .addReview("I didn't like it.", Rating.BAD, users.get(1))
-                .addReview("Very good base for sequels.", Rating.GOOD, users.get(2))
+                .addReview("Very good base for sequels.", Rating.GOOD, users.get(1))
                 .addActor(actors.get(8))
                 .addActor(actors.get(9))
                 .build();
@@ -219,21 +219,21 @@ public class App {
         User me = new UserBuilder()
                 .setName("Neudert Norbert")
                 .setEmail("norbertneudert@gmail.com")
-                .setPassword("password")
+                .setPassword("password1")
                 .build();
         users.add(me);
 
         User user1 = new UserBuilder()
                 .setName("Teszt Elek")
                 .setEmail("tesztelek@gmail.com")
-                .setPassword("password")
+                .setPassword("password2")
                 .build();
         users.add(user1);
 
         User user2 = new UserBuilder()
                 .setName("Para Zita")
                 .setEmail("parazita@gmail.com")
-                .setPassword("password")
+                .setPassword("password3")
                 .build();
         users.add(user2);
 

@@ -46,6 +46,10 @@ public class View {
         }
         System.out.println("Average of reviews: " + average/count);
     }
+
+    public void printMediaNotFound(BigDecimal id) {
+        System.out.println("Media not found with the id: " + id);
+    }
     public String askReview() throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Do you want to write another review? (yes/no)");

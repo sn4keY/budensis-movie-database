@@ -44,8 +44,27 @@ public class App {
         // TODO: implement function
     }
 
-    private void doReview() {
-        // TODO: implement function
+    private void doReview(User user) throws IOException {
+        BigDecimal id = this.view.askId();
+        String text = this.view.askText();
+        Rating rating = this.view.askRating();
+        for(Media m: this.medias) {
+            if(m.getId().equals(id)) {
+                this.selectedMedia = m;
+                break;
+            }
+        }
+        if (this.selectedMedia != null){
+            this.review = new Review();
+            this.review.setReviewedMedia(this.selectedMedia);
+            this.review.setRating(rating);
+            this.review.setCreator(user);
+            this.review.setText(text);
+            this.selectedMedia.getReviews().add(this.review);
+            this.printReviewAverage();
+        } else {
+            this.view.printMediaNotFound(id);
+        }
     }
 
     private void printReviewAverage() {

@@ -21,7 +21,7 @@ public class App {
     private View view;
 
     public App (Service service, View view) {
-        this.medias = Collections.emptyList();
+        this.medias = new ArrayList<Media>();
         this.createTestData();
         this.service = service;
         this.view = view;

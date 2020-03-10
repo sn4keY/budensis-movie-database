@@ -2,6 +2,7 @@ package com.norbertneudert.bmdb.domain;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -14,8 +15,8 @@ public class Media {
     private List<Actor> cast;
 
     public Media() {
-        this.reviews = Collections.emptyList();
-        this.cast = Collections.emptyList();
+        this.reviews = new ArrayList<Review>();
+        this.cast = new ArrayList<Actor>();
     }
 
     public BigDecimal getId() {

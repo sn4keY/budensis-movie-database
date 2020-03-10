@@ -1,6 +1,7 @@
 package com.norbertneudert.bmdb.domain;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -12,7 +13,7 @@ public class Actor {
     private List<Media> filmography;
 
     public Actor() {
-        this.setFilmography(Collections.emptyList());
+        this.setFilmography(new ArrayList<Media>());
     }
 
     public String getName() {

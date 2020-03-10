@@ -1,5 +1,6 @@
 package com.norbertneudert.bmdb.domain;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -10,7 +11,7 @@ public class User {
     private List<Review> reviews;
 
     public User() {
-        this.setReviews(Collections.emptyList());
+        this.setReviews(new ArrayList<Review>());
     }
 
     public String getName() {

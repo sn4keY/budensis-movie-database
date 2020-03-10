@@ -66,4 +66,14 @@ public class Media {
     public void setCast(List<Actor> cast) {
         this.cast = cast;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        return stringBuilder.append(getId()).append(":'").append(getTitle())
+                .append("'\nDescription='").append(getDescription())
+                .append("'\nPremier=").append(getPremier())
+                .append("\nCast=").append(getCast().toString())
+                .append("\nReviews=").append(getReviews().toString()).toString();
+    }
 }

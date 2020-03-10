@@ -39,4 +39,11 @@ public class Review {
     public void setRating(Rating rating) {
         this.rating = rating;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        return stringBuilder.append(getCreator().getName()).append(":'").append(getText()).append("'")
+                .append("\nrating=").append(getRating()).append("\n").toString();
+    }
 }

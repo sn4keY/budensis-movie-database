@@ -5,11 +5,9 @@ import com.norbertneudert.bmdb.builders.MediaBuilder;
 import com.norbertneudert.bmdb.builders.UserBuilder;
 import com.norbertneudert.bmdb.domain.*;
 
-import java.io.IOException;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class App {

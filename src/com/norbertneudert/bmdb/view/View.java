@@ -54,13 +54,22 @@ public class View {
 
     public BigDecimal askId() {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("Choose an id");
         BigDecimal id = null;
-        try {
-            id = new BigDecimal(bufferedReader.readLine());
-        } catch (IOException e) {
-            e.printStackTrace();
+        double num = Double.MAX_VALUE;
+        while(num == Double.MAX_VALUE) {
+            try {
+                System.out.println("Choose an id");
+                String numString = bufferedReader.readLine();
+                try {
+                    num = Double.parseDouble(numString);
+                } catch (NumberFormatException nfe) {
+                    System.out.println("Only numbers accepted");
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
+        id = new BigDecimal(num);
         return id;
     }
 

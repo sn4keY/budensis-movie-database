@@ -30,12 +30,12 @@ public class App {
     public void play() {
         User user = this.view.readUserData();
         this.view.printWelcomeMessage(user);
-        String wantToReview = "yes";
+        String wantToReview = "YES";
         do {
             this.view.printMedias(this.medias);
             this.doReview(user);
             wantToReview = this.view.askReview();
-        } while ( wantToReview.equals("yes"));
+        } while ( wantToReview.equals("YES"));
     }
 
     private void createUser() {
@@ -44,8 +44,6 @@ public class App {
 
     private void doReview(User user) {
         BigDecimal id = this.view.askId();
-        String text = this.view.askText();
-        Rating rating = this.view.askRating();
         for(Media m: this.medias) {
             if(m.getId().equals(id)) {
                 this.selectedMedia = m;
@@ -53,6 +51,8 @@ public class App {
             }
         }
         if (this.selectedMedia != null){
+            String text = this.view.askText();
+            Rating rating = this.view.askRating();
             this.review = new Review();
             this.review.setReviewedMedia(this.selectedMedia);
             this.review.setRating(rating);
@@ -62,6 +62,7 @@ public class App {
             this.printReviewAverage();
         } else {
             this.view.printMediaNotFound(id);
+            this.doReview(user);
         }
     }
 

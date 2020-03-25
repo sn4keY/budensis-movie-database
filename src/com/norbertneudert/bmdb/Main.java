@@ -1,5 +1,6 @@
 package com.norbertneudert.bmdb;
 
+import com.norbertneudert.bmdb.app.App;
 public class Main {
 
     public static void main(String[] args) {

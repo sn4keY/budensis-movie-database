@@ -1,9 +1,11 @@
-package com.norbertneudert.bmdb;
+package com.norbertneudert.bmdb.app;
 
+import com.norbertneudert.bmdb.view.View;
 import com.norbertneudert.bmdb.builders.ActorBuilder;
 import com.norbertneudert.bmdb.builders.MediaBuilder;
 import com.norbertneudert.bmdb.builders.UserBuilder;
 import com.norbertneudert.bmdb.domain.*;
+import com.norbertneudert.bmdb.service.Service;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;

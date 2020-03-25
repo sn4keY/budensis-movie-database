@@ -1,4 +1,4 @@
-package com.norbertneudert.bmdb;
+package com.norbertneudert.bmdb.service;
 
 import com.norbertneudert.bmdb.domain.Media;
 import com.norbertneudert.bmdb.domain.Review;

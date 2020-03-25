@@ -54,13 +54,22 @@ public class View {
 
     public BigDecimal askId() {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("Choose an id");
         BigDecimal id = null;
-        try {
-            id = new BigDecimal(bufferedReader.readLine());
-        } catch (IOException e) {
-            e.printStackTrace();
+        double num = Double.MAX_VALUE;
+        while(num == Double.MAX_VALUE) {
+            try {
+                System.out.println("Choose an id");
+                String numString = bufferedReader.readLine();
+                try {
+                    num = Double.parseDouble(numString);
+                } catch (NumberFormatException nfe) {
+                    System.out.println("Only numbers accepted");
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
+        id = new BigDecimal(num);
         return id;
     }
 
@@ -78,10 +87,12 @@ public class View {
 
     public Rating askRating() {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("Choose a rating: BAD, AVERAGE, GOOD");
         String rating = null;
         try {
-            rating = bufferedReader.readLine();
+            do {
+                System.out.println("Choose a rating: BAD, AVERAGE, GOOD");
+                rating = bufferedReader.readLine();
+            } while (!this.isRatingValid(rating.toUpperCase()));
             switch (rating.toLowerCase()) {
                 case "bad":
                     return Rating.BAD;
@@ -94,12 +105,21 @@ public class View {
         return Rating.AVERAGE;
     }
 
+    private boolean isRatingValid(String userInput) {
+        if (userInput.equals("BAD") || userInput.equals("AVERAGE") || userInput.equals("GOOD")){
+            return true;
+        }
+        return false;
+    }
+
     public String askReview() {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("Do you want to write another review? (yes/no)");
         String choice = "";
         try {
-            choice = bufferedReader.readLine();
+            while (!choice.equals("NO") && !choice.equals("YES")) {
+                System.out.println("Do you want to write another review? (yes/no)");
+                choice = bufferedReader.readLine().toUpperCase();
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
